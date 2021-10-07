@@ -1,4 +1,3 @@
-from selenium.common.exceptions import NoSuchElementException
 from autotesting.qqq import *
 
 def korzina_click():
@@ -35,7 +34,7 @@ def perehod_vkorziny():
 
 def proverka_kolvo_tovara():
     b.driver.implicitly_wait(5)
-    proverka_kolvo_tovarax = b.driver.find_element_by_xpath('//*[@class="Cart_qtyInput__Xh20f"][@value="4"]')
+    proverka_kolvo_tovarax = b.driver.find_element_by_xpath('//*[@class="Cart_qtyInput__Xh20f"][@value="3"]')
 
 print('Выполнение TestCase: CartCestUpd')
 try:
