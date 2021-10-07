@@ -32,6 +32,11 @@ def perehod_vkorziny():
     b.driver.implicitly_wait(5)
     perehod_vkorzinyx = b.driver.find_element_by_xpath('//*[@class="Button_button__3uOSp Button_borderless__3DPYR"][contains(text(),"В корзину")]').click()
 
+
+def proverka_kolvo_tovara():
+    b.driver.implicitly_wait(5)
+    proverka_kolvo_tovarax = b.driver.find_element_by_xpath('//*[@class="Cart_qtyInput__Xh20f"][@value="4"]')
+
 print('Выполнение TestCase: CartCestUpd')
 try:
     korzina_click()
@@ -49,7 +54,6 @@ try:
     time.sleep(1)
     perehod_vkorziny()
 
-    #
     while True:
         chetchik = chetchik - 1
         time.sleep(1)
@@ -57,6 +61,9 @@ try:
         if chetchik == 2:
             break
     b.driver.refresh()
+
+    proverka_kolvo_tovara()
+
     print('Успех TestCase: CartCestUpd')
 except Exception as e:
     print('Провал TestCase: CartCestUpd')
